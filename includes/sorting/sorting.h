@@ -1,8 +1,9 @@
-#include <vector>
-#include <iterator>
-#include <functional>
+#ifndef SORTING_H
+#define SORTING_H
 
-#include "sorting.h"
+#include <functional>
+#include <iterator>
+#include <vector>
 
 template <typename Element, typename Compare = std::less<Element>>
 void bubble_sort(Element* arr, size_t size, Compare comp = Compare()) {
@@ -90,3 +91,5 @@ void quick_sort(Iterator first, Iterator last, Compare comp = Compare()) {
     quick_sort(first, pivot);
     quick_sort(std::next(pivot), last);
 }
+
+#endif
